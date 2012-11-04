@@ -46,7 +46,6 @@ class DocumentsController < ApplicationController
     
     if @author == nil then
       @author = Author.new(params[:author])
-      p @author 
       @author.save
     end
     

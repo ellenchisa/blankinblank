@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104060307) do
+ActiveRecord::Schema.define(:version => 20121104062723) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
-    t.string   "twitterhandle"
+    t.string   "twitter_handle"
     t.string   "url"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "email_address"
   end
 
