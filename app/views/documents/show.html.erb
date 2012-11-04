@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Url:</b>
+  <%= @document.url %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @document.city %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @document.job %>
+</p>
+
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>

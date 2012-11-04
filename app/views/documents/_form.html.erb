@@ -11,6 +11,33 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job %>
+  </div>
+
+  <div class="field">
+    <%= label :author, :name %><br />
+    <%= text_field :author, :name %>
+  </div>
+  <div class="field">
+    <%= label :author, :twitterhandle %><br />
+    <%= text_field :author, :twitterhandle %>
+  </div>
+  <div class="field">
+    <%= label :author, :email_address %><br />
+    <%= text_field :author, :email_address %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

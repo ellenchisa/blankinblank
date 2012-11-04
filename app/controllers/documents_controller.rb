@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+
   # GET /documents
   # GET /documents.json
   def index
@@ -41,17 +42,31 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
+    @author = Author.find_by_email_address(params[:author][:email_address])
+    
+    if @author == nil then
+      @author = Author.new(params[:author])
+      p @author 
+      @author.save
+    end
+    
+      @document.author = @author
 
     respond_to do |format|
       if @document.save
+  
+        
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
+        
       else
         format.html { render action: "new" }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
     end
   end
+  
+  
 
   # PUT /documents/1
   # PUT /documents/1.json
