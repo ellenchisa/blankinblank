@@ -1,9 +1,23 @@
 <%= form_tag "/results", :method => "get" do %>
 
-<h1><%= select_tag "jobs", options_for_select(@jobs) %> in <%= select_tag "cities", options_for_select(@cities) %></h1>
-
-<div id="submit-button"><%= submit_tag "Go!!!!!!!"%></div>
+<h1><%= select_tag "jobs", options_for_select(@jobs)%> in <%= select_tag "cities", options_for_select(@cities) %></h1>
 
 <h2><%= link_to "Create your own?", new_document_path %></h2>
 
 <% end -%>
+
+<script type="text/javascript">
+	$(function(){
+		$("select").change(function(){
+			var navigate = true;
+				$("select").each(function(){
+					if(this.value===''){
+						navigate = false;
+					}
+				})
+				if (navigate === true){
+					$("form").submit();
+				}
+		})
+	});
+</script>

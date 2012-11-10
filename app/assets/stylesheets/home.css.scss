@@ -13,16 +13,13 @@ font-weight: normal;
 select{
   border:none;
   border-bottom:3px black solid;
-  width:250px;
+  min-width:250px;
   font-size:40pt;
   font-family:Helvetica, Sans-Serif;
   -webkit-appearance:none;
+  padding:0 10px;
 }
 
 h2{
-  text-align:center;
-}
-
-#submit-button{
   text-align:center;
 }

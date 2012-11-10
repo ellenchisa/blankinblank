@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @cities= Document.where(:approved=>true).map(&:city).uniq
-    @jobs= Document.where(:approved=>true).map(&:job).uniq
+    @cities = Document.where(:approved=>true).map(&:city).uniq
+    @jobs = Document.where(:approved=>true).map(&:job).uniq
   end
   
   def results
