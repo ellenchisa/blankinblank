@@ -1,0 +1,9 @@
+<h1>Home!</h1>
+
+<%= form_tag "/results", :method => "get" do %>
+
+<h2>I'm a</h2> <%= select_tag "jobs", options_for_select(@jobs) %> <h2>in</h2> <%= select_tag "cities", options_for_select(@cities) %>
+
+<%= submit_tag "Go!!!!!!!"%>
+
+<% end -%>
