@@ -42,6 +42,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
+    @document.approved = false
     @author = Author.find_by_email_address(params[:author][:email_address])
     
     if @author == nil then
