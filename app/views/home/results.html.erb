@@ -1,24 +1,14 @@
-<h1>mORE STUFFS</h1>
+<h1>MORE STUFFS</h1>
 <h2> you searched for <%=@job%> in <%=@city%>! </h2>
 
 <table>
   <tr>
-    <th>Url</th>
-    <th>City</th>
-    <th>Job</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Here are some DOCUMENTS!</th>
   </tr>
 
 <% @documents.each do |document| %>
   <tr>
-    <td><%= document.url %></td>
-    <td><%= document.city %></td>
-    <td><%= document.job %></td>
-    <td><%= link_to 'Show', document %></td>
-    <td><%= link_to 'Edit', edit_document_path(document) %></td>
-    <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to document.url, document.url %></td>
   </tr>
 <% end %>
 </table>
