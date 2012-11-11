@@ -1,13 +1,18 @@
 Wanderlust::Application.routes.draw do
   
-  resources :documents
-  resources :authors
+  resources :documents, :only => [:new,:create] do 
+    collection do
+      get "success"
+    end
+  end
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
      match 'results' => 'home#results'
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

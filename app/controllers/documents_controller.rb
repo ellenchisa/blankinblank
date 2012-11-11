@@ -56,7 +56,7 @@ class DocumentsController < ApplicationController
       if @document.save
   
         
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to success_documents_url, notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
         
       else
@@ -83,6 +83,10 @@ class DocumentsController < ApplicationController
       end
     end
   end
+  
+  def success
+  end
+  
 
   # DELETE /documents/1
   # DELETE /documents/1.json
