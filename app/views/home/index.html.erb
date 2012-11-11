@@ -1,6 +1,6 @@
 <%= form_tag "/results", :method => "get" do %>
 
-<h1><%= select_tag "jobs", options_for_select(@jobs)%> in <%= select_tag "cities", options_for_select(@cities) %></h1>
+<h1><%= select_tag "jobs", options_for_select(@jobs), :include_blank => true %> in <%= select_tag "cities", options_for_select(@cities), :include_blank => true %></h1>
 
 <h2><%= link_to "Create your own?", new_document_path %></h2>
 
