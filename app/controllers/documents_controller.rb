@@ -1,10 +1,12 @@
 class DocumentsController < ApplicationController
 
+  before_filter :isadmin,:except => [:new,:create,:success ]
+
   # GET /documents
   # GET /documents.json
   def index
     @documents = Document.all
-
+p @documents
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }

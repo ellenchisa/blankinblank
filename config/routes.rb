@@ -1,6 +1,6 @@
 Wanderlust::Application.routes.draw do
   
-  resources :documents, :only => [:new,:create] do 
+  resources :documents do 
     collection do
       get "success"
     end
