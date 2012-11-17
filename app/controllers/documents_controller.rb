@@ -25,8 +25,9 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   # GET /documents/new.json
   def new
+    @author = Author.find_by_facebookuid(session[:fbuser]['id'])
+    @author = Author.new if @author == nil
     @document = Document.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @document }
@@ -43,11 +44,14 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(params[:document])
     @document.approved = false
-    @author = Author.find_by_email_address(params[:author][:email_address])
+    @author = Author.find_by_facebookuid(session[:fbuser]['id'])
     
     if @author == nil then
       @author = Author.new(params[:author])
-      #@author.save
+      @author.facebookuid = session[:fbuser]['id']
+      @author.name = session[:fbuser]['name']
+    else 
+      @author.update_attributes(params[:author])
     end
     
       @document.author = @author

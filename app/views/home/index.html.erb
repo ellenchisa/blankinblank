@@ -2,8 +2,7 @@
 
 <h1><%= select_tag "jobs", options_for_select(@jobs), :include_blank => true %> in <%= select_tag "cities", options_for_select(@cities), :include_blank => true %></h1>
 
-<%= link_to 'Login', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %>
-<h2><%= link_to "Create your own?", new_document_path %></h2>
+<h2><%= link_to "Create your own?", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></h2>
 
 <p><%= session[:fbuser] %><p>
 

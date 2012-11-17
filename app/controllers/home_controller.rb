@@ -11,8 +11,6 @@ class HomeController < ApplicationController
   end
   
   def oauth
-   # session[:access_token] = Koala::Facebook::OAuth.new(oauth_url).get_access_token(params[:code]) if params[:code]
-    #  redirect_to session[:access_token] ? root_url : root_url
     oauth = Koala::Facebook::OAuth.new(oauth_url)
     
     access_token = oauth.get_access_token(params[:code])
@@ -22,7 +20,7 @@ class HomeController < ApplicationController
     
     session[:fbuser] = fb_user
     
-    redirect_to root_url
+    redirect_to new_document_url
   end
     
 end
