@@ -1,14 +1,19 @@
 <h1>MORE STUFFS</h1>
 <h2>I'm a <%=@job%> in <%=@city%>! </h2>
 
-<table>
-  <tr>
-    <th>Here are some DOCUMENTS!</th>
-  </tr>
+<% if @documents.length > 0 then %>
+	<table>
+  		<tr>
+    		<th>Here are some DOCUMENTS!</th>
+  		</tr>
 
-<% @documents.each do |document| %>
-  <tr>
-    <td><%= link_to document.url, document.url %></td>
-  </tr>
+		<% @documents.each do |document| %>
+  		<tr>
+    		<td><%= link_to document.url, document.url %></td>
+  		</tr>
+		<% end %>
+	</table>
+	
+<% else %>
+	<p>There are no documents :( <%= link_to "Create your own?", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></p>
 <% end %>
-</table>
