@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
-
-  before_filter :isadmin,:except => [:new,:create,:success ]
+  
+  before_filter :is_authenticated
+  before_filter :is_admin,:except => [:new,:create,:success ]
 
   # GET /documents
   # GET /documents.json

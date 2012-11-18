@@ -23,4 +23,10 @@ class HomeController < ApplicationController
     redirect_to new_document_url
   end
     
+  def logout
+    session[:fbuser] = nil
+    redirect_to root_url
+  end
+  
+    
 end

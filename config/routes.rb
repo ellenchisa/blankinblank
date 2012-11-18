@@ -13,6 +13,7 @@ Wanderlust::Application.routes.draw do
   # Sample of regular route:
      match 'results' => 'home#results'
      match 'oauth' => 'home#oauth'
+     match 'logout' => 'home#logout'
      
   # Keep in mind you can assign values other than :controller and :action
 
