@@ -39,6 +39,7 @@ p @documents
   # GET /documents/1/edit
   def edit
     @document = Document.find(params[:id])
+    @author = @document.author
   end
 
   # POST /documents
@@ -80,7 +81,7 @@ p @documents
     @document = Document.find(params[:id])
 
     respond_to do |format|
-      if @document.update_attributes(params[:document])
+      if @document.update_attributes(params[:document]) and @document.author.update_attributes(params[:author])
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
         format.json { head :no_content }
       else
