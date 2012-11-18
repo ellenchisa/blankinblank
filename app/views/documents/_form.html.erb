@@ -37,6 +37,15 @@
     <%= text_area :author, :bio %>
   </div>
 
+<% if @isadmin then %>
+
+<div class="field">
+    <%= f.label :approved %><br />
+    <%= f.check_box :approved %>
+  </div>
+<% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

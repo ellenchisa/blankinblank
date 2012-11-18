@@ -4,8 +4,6 @@
 
 <h2><%= link_to "Create your own?", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></h2>
 
-<p><%= session[:fbuser] %><p>
-
 <% end -%>
 
 <script type="text/javascript">
