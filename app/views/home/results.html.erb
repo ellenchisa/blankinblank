@@ -4,12 +4,14 @@
 <% if @documents.length > 0 then %>
 	<table>
   		<tr>
-    		<th>Here are some DOCUMENTS!</th>
+    		<th></th>
+			<th>Here are some DOCUMENTS!</th>
   		</tr>
 
 		<% @documents.each do |document| %>
   		<tr>
-    		<td><%= link_to document.url, document.url %></td>
+    		<td><img src="http://graph.facebook.com/<%= document.author.facebookuid %>/picture?type=square" /></td>
+			<td><%= link_to document.url, document.url %></td>
   		</tr>
 		<% end %>
 	</table>
