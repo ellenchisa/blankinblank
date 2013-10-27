@@ -1,21 +1,31 @@
-<h1>MORE STUFFS</h1>
-<h2>I'm a <%=@job%> in <%=@city%>! </h2>
+<p>Here's everything we've got about being a <%=@job%> in <%=@city%>! </p>
 
 <% if @documents.length > 0 then %>
-	<table>
-  		<tr>
-    		<th></th>
-			<th>Here are some DOCUMENTS!</th>
-  		</tr>
-
-		<% @documents.each do |document| %>
-  		<tr>
-    		<td><img src="http://graph.facebook.com/<%= document.author.facebookuid %>/picture?type=square" /></td>
-			<td><%= link_to document.url, document.url %></td>
-  		</tr>
-		<% end %>
-	</table>
+	<ul id="document-list">
+        <% @documents.each do |document| %>
+        <li> 
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="http://graph.facebook.com/<%= document.author.facebookuid %>/picture?type=normal">
+                </div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <p class="txt-sm col-md-6"> <%= document.author.name %></p>
+                    </div>
+                    <div class="row">
+                        <p class="txt-sm col-md-6"> <%= document.author.bio %></p>
+                    </div>
+                      <div class="row">
+                        <p class="txt-sm col-md-8"> Wrote "<%=link_to document.title, document.url %>"</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <% end %>
+    </ul>
 	
 <% else %>
-	<p>There are no documents :( <%= link_to "Create your own?", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></p>
+	<br>
+    <p class="txt-sm"> Womp womp. There are no documents for this combination yet. Just trying to check out your own area? You could be the first to <%= link_to "create one!", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %> Or, if you'd be willing to write one about where you are now, <a href=mailto:"ellen.chisa@gmail.com"> email me </a> and I'll try to find someone to write one about where you're going. </p>
 <% end %>
