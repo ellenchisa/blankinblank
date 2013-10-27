@@ -13,12 +13,14 @@ font-weight: normal;
 
 select{
   border:none;
-  border-bottom:3px black solid;
   min-width:250px;
-  font-size:40pt;
-  font-family:Helvetica, Sans-Serif;
-  -webkit-appearance:none;
   padding:0 10px;
+  font-size: 35px;
+  -webkit-appearance:none;
+}
+
+span.underlined {
+    border-bottom: 3px solid black;
 }
 
 h2{
