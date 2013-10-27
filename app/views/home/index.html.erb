@@ -7,12 +7,11 @@
 
 <p class="tk-museo-slab"> Hi! </p>
 <p class="tk-museo-slab"> I am a <%= select_tag "jobs", options_for_select(@jobs), :include_blank => true %>.</p>
-<p class="tk-museo-slab"> I am moving to <%= select_tag "cities", options_for_select(@cities), :include_blank => true %></p>
+<p class="tk-museo-slab"> I am moving to <%= select_tag "cities", options_for_select(@cities), :include_blank => true %>.</p>
 <p class="tk-museo-slab"> What could I do there? </h1>
-<p class="tk-museo-slab"> Love,</p>
-<p class="tk-museo-slab"> NAME </p>
+<p class="tk-museo-slab"> Love, Me</p>
 
-<h2><%= link_to "Love what you do in your city? Submit your own advice document.", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></h2>
+<h2><%= link_to "Know what to do in another city? Submit your own advice document.", Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => oauth_url) %></h2>
 
 <% end -%>
 
