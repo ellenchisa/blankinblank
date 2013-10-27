@@ -7,8 +7,8 @@
 
 <div id="letter">
 	<p class="tk-museo-slab"> Hi! </p>
-	<p class="tk-museo-slab"> I am a <span class="underlined"><%= select_tag "jobs", options_for_select(@jobs), :include_blank => true %></span>.</p>
-	<p class="tk-museo-slab"> I am moving to <span class="underlined"><%= select_tag "cities", options_for_select(@cities), :include_blank => true %></span>.</p>
+	<p class="tk-museo-slab"> I am a <span class="underlined"><%= select_tag "jobs", options_for_select(@jobs), :include_blank => true, :class => 'tk-museo-slab' %></span>.</p>
+	<p class="tk-museo-slab"> I am moving to <span class="underlined"><%= select_tag "cities", options_for_select(@cities), :include_blank => true, :class => 'tk-museo-slab' %></span>.</p>
 	<p class="tk-museo-slab"> What could I do there? </h1>
 	<p class="tk-museo-slab"> Love, Me</p>
 </div>
